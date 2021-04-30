@@ -1,0 +1,6 @@
+-r requirements.txt
+black
+alembic
+ipython
+flask-shell-ipython
+faker

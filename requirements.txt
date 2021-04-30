@@ -1,0 +1,13 @@
+SQLAlchemy
+WTForms
+Werkzeug
+alembic
+flask
+flask-mail
+flask-migrate
+flask_sqlalchemy
+flask_wtf
+Flask-Bootstrap
+flask_moment
+python-dotenv
+click
