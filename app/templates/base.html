@@ -1,14 +1,34 @@
 {% extends 'bootstrap/base.html' %}
 
+
 {% block title %}
     {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
-    <nav class="navbar navbar-default">
-        <div>Microblog: <a href="/index">Home</a></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3e6fd;">
+        <div style="padding: 10px 0;">
+            Microblog:
+            <a href="/index">Home</a>
+            <a href="/login">Login</a>
+        </div>
         <hr>
     </nav>
+
+
+    {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        <li>{{ message }}</li>
+                    </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+    {% endwith %}
 {% endblock %}
+
 
 {% block content %}{% endblock %}
