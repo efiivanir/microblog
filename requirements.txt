@@ -3,6 +3,7 @@ WTForms
 Werkzeug
 alembic
 flask
+flask_login
 flask-mail
 flask-migrate
 flask_sqlalchemy
@@ -11,3 +12,5 @@ Flask-Bootstrap
 flask_moment
 python-dotenv
 click
+email-validator
+

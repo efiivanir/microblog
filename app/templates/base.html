@@ -11,7 +11,11 @@
             <div>
                 Microblog:
                 <a href="{{ url_for('index') }}">Home</a>
-                <a href="{{ url_for('login') }}">Login</a>
+                {% if current_user.is_anonymous %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% else %}
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
             </div>
         </div>
         <hr>
@@ -23,7 +27,7 @@
             {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-danger" role="alert">
                         <li>{{ message }}</li>
                     </div>
                 {% endfor %}
