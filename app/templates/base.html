@@ -30,9 +30,15 @@
             {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <div class="alert alert-danger" role="alert">
-                        <li>{{ message }}</li>
-                    </div>
+                    {% if 'Congratulations' in server %}
+                        <div class="alert alert-success" role="alert">
+                            <li>{{ message }}</li>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-danger" role="alert">
+                            <li>{{ message }}</li>
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </ul>
             {% endif %}
